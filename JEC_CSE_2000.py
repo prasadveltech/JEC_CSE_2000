@@ -160,16 +160,16 @@ label = [i[0] for i in least_10_users]
 
 def func(pct, allvals):
     absolute = int(pct / 100. * np.sum(allvals))
-    return "{:d} msgs".format(absolute)
+    return "{:d} ".format(absolute)
 
 
-fig, ax = plt.subplots(figsize=(6, 3), subplot_kw=dict(aspect="equal"))
+fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(aspect="equal"))
 
 wedges, texts, autotexts = ax.pie(data, autopct=lambda pct: func(pct, data),
                                   textprops=dict(color="w"))
 
 ax.legend(wedges, label,
-          title="Top 10 Inactive Users!",
+          title="Top 10 least active Users based on posted messages",
           loc="center left",
           bbox_to_anchor=(1, 0, 0.5, 1))
 
